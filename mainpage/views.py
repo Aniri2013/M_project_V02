@@ -21,3 +21,9 @@ def registry(request):
     print("Its work!!!")
     print()
     return render(request, "mainpage/registry.html")
+
+def cart(request):
+    print()
+    print("Its work!!!")
+    print()
+    return render(request, "mainpage/cart.html")
