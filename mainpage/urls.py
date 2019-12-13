@@ -8,4 +8,5 @@ urlpatterns = [
     path('sing_in', sing_in),
     path('registry', registry),
     path('cart', cart),
+    path('checkout', checkout)
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

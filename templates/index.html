@@ -97,7 +97,7 @@
             <div class="pull-left">
                 <!-- Logo -->
                 <div class="header-logo">
-                    <a class="logo" href="#">
+                    <a class="logo" href="http://127.0.0.1:8002/main#">
                         <img src="{% static 'img/logo.png' %}" alt="">
                     </a>
                 </div>
@@ -127,13 +127,13 @@
                             </div>
                             <strong class="text-uppercase">My Account <i class="fa fa-caret-down"></i></strong>
                         </div>
-                        <a href="#" class="text-uppercase">Login</a> / <a href="#" class="text-uppercase">Join</a>
+                        <a href="sing_in" class="text-uppercase">Login</a> / <a href="singn_in" class="text-uppercase">Join</a>
                         <ul class="custom-menu">
                             <li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
                             <li><a href="#"><i class="fa fa-heart-o"></i> My Wishlist</a></li>
                             <li><a href="#"><i class="fa fa-exchange"></i> Compare</a></li>
                             <li><a href="#"><i class="fa fa-check"></i> Checkout</a></li>
-                            <li><a href="#"><i class="fa fa-unlock-alt"></i> Login</a></li>
+                            <li><a href="sing_in"><i class="fa fa-unlock-alt"></i> Login</a></li>
                             <li><a href="#"><i class="fa fa-user-plus"></i> Create An Account</a></li>
                         </ul>
                     </li>
@@ -164,8 +164,19 @@
                                     </div>
                                     <div class="product product-widget">
                                         <div class="product-thumb">
-                                            <img src="{% static 'img/thumb-product01.jpg' %}" alt="">
+                                            <img src="{% static 'img/thumb-product02.jpg' %}" alt="">
                                         </div>
+                                        <div class="product-body">
+                                            <h3 class="product-price">$32.50 <span class="qty">x3</span></h3>
+                                            <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
+                                        </div>
+                                        <button class="cancel-btn"><i class="fa fa-trash"></i></button>
+                                    </div>
+                                     <div class="product product-widget">
+                                        <div class="product-thumb">
+                                            <img src="{% static 'img/thumb-product03.jpg' %}" alt="">
+                                        </div>
+                                         <button class="cancel-btn"><i class="fa fa-trash"></i></button>
                                         <div class="product-body">
                                             <h3 class="product-price">$32.50 <span class="qty">x3</span></h3>
                                             <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
@@ -585,7 +596,7 @@
                 <div class="footer">
                     <!-- footer logo -->
                     <div class="footer-logo">
-                        <a class="logo" href="#">
+                        <a class="logo" href="http://127.0.0.1:8002/main#">
                             <img src="{% static 'img/logo.png' %}" alt="">
                         </a>
                     </div>
@@ -616,7 +627,7 @@
                         <li><a href="#">My Wishlist</a></li>
                         <li><a href="#">Compare</a></li>
                         <li><a href="#">Checkout</a></li>
-                        <li><a href="#">Login</a></li>
+                        <li><a href="sing_in">Login</a></li>
                     </ul>
                 </div>
             </div>

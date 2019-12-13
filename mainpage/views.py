@@ -27,3 +27,9 @@ def cart(request):
     print("Its work!!!")
     print()
     return render(request, "mainpage/cart.html")
+
+def checkout(request):
+    print()
+    print("Its work!!!")
+    print()
+    return render(request, "mainpage/checkout.html")
