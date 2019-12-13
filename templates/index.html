@@ -97,7 +97,7 @@
             <div class="pull-left">
                 <!-- Logo -->
                 <div class="header-logo">
-                    <a class="logo" href="http://127.0.0.1:8002/main#">
+                    <a class="logo" href="http://127.0.0.1:8000/main">
                         <img src="{% static 'img/logo.png' %}" alt="">
                     </a>
                 </div>
@@ -127,13 +127,13 @@
                             </div>
                             <strong class="text-uppercase">My Account <i class="fa fa-caret-down"></i></strong>
                         </div>
-                        <a href="sing_in" class="text-uppercase">Login</a> / <a href="singn_in" class="text-uppercase">Join</a>
+                        <a href="http://127.0.0.1:8000/pages/sing_in" class="text-uppercase">Login</a> / <a href="http://127.0.0.1:8000/pages/sing_in" class="text-uppercase">Join</a>
                         <ul class="custom-menu">
                             <li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
                             <li><a href="#"><i class="fa fa-heart-o"></i> My Wishlist</a></li>
                             <li><a href="#"><i class="fa fa-exchange"></i> Compare</a></li>
-                            <li><a href="#"><i class="fa fa-check"></i> Checkout</a></li>
-                            <li><a href="sing_in"><i class="fa fa-unlock-alt"></i> Login</a></li>
+                            <li><a href="http://127.0.0.1:8000/pages/checkout"><i class="fa fa-check"></i> Checkout</a></li>
+                            <li><a href="http://127.0.0.1:8000/pages/sing_in"><i class="fa fa-unlock-alt"></i> Login</a></li>
                             <li><a href="#"><i class="fa fa-user-plus"></i> Create An Account</a></li>
                         </ul>
                     </li>
@@ -186,7 +186,7 @@
                                 </div>
                                 <div class="shopping-cart-btns">
                                     <button class="main-btn">View Cart</button>
-                                    <button class="primary-btn">Checkout <i class="fa fa-arrow-circle-right"></i>
+                                    <button class="main-btn"> <a href="pages/checkout"</a> Checkout</button>
                                     </button>
                                 </div>
                             </div>
@@ -568,7 +568,7 @@
                             <li><a href="index.html">Home</a></li>
                             <li><a href="products.html">Products</a></li>
                             <li><a href="product-page.html">Product Details</a></li>
-                            <li><a href="checkout.html">Checkout</a></li>
+                            <li><a href="http://127.0.0.1:8000/pages/checkout">Checkout</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -596,7 +596,7 @@
                 <div class="footer">
                     <!-- footer logo -->
                     <div class="footer-logo">
-                        <a class="logo" href="http://127.0.0.1:8002/main#">
+                        <a class="logo" href="http://127.0.0.1:8000/main">
                             <img src="{% static 'img/logo.png' %}" alt="">
                         </a>
                     </div>
@@ -626,8 +626,8 @@
                         <li><a href="#">My Account</a></li>
                         <li><a href="#">My Wishlist</a></li>
                         <li><a href="#">Compare</a></li>
-                        <li><a href="#">Checkout</a></li>
-                        <li><a href="sing_in">Login</a></li>
+                        <li><a href="http://127.0.0.1:8000/pages/checkout">Checkout</a></li>
+                        <li><a href="http://127.0.0.1:8000/pages/sing_in">Login</a></li>
                     </ul>
                 </div>
             </div>
