@@ -2,15 +2,13 @@
 
 {% load staticfiles %}
 
-{% block content %}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Login V13</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="{% static 'vendorreg/bootstrap/css/bootstrap.min.css' %}">
+{% block link %}
+	<!-- css files for sing in template -->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <!-- fonts files for sing in template -->
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'fonts/Linearicons-Free-v1.0.0/icon-font.min.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'vendorreg/animate/animate.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'vendorreg/css-hamburgers/hamburgers.min.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'vendorreg/animsition/css/animsition.min.css' %}">
@@ -18,10 +16,9 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'vendorreg/daterangepicker/daterangepicker.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/utilreg.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/mainreg.css' %}">
-<!--===============================================================================================-->
-</head>
-<body style="background-color: #FFFFFF;">
+{% endblock %}
 
+{% block content %}
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
@@ -110,8 +107,5 @@
 	<script src="{% static 'vendor/countdowntime/countdowntime.js' %}"></script>
 <!--===============================================================================================-->
 	<script src="{% static 'js/mainreg.js' %}"></script>
-
-</body>
-</html>
 
 {% endblock %}

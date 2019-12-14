@@ -2,25 +2,39 @@
 
 {% load staticfiles %}
 
+{% block link %}
+    <style>
+        .my_cart{
+            width: 1140px;
+            margin: auto;
+        }
+        .cards{
+            display: flex;
+            width: 1140px;
+            margin: auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+{% endblock %}
+
 {% block content %}
+<section class="my_cart">
+    <h4 style="margin: 20px;">My Cart</h4>
+    <div class="cards">
+    <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Название карточки</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            <a href="#" class="btn btn-primary" style="background: #dc3545; border: #dc3545;">Удалить</a>
+        </div>
+    </div>
+</div>
+</section>
 
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Корзина</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style_cart.css' %}">
-</head>
-<body>
 
-<div id="my-cart"></div>
 
-<script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
-<script src="{% static 'js/cart.js' %}"></script>
-<script src="{% static 'js/eshop.js' %}"></script>
-
-</body>
-</html>
 {% endblock %}
 
