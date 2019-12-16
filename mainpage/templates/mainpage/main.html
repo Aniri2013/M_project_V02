@@ -2,6 +2,123 @@
 
 {% load staticfiles %}
 
+{% block auth %}
+{% if user.is_authenticated %}
+            <div class="pull-right">
+                <ul class="header-btns">
+                    <!-- Account -->
+                    <li class="header-account dropdown default-dropdown">
+                        <div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
+                            <div class="header-btns-icon">
+                                <i class="fa fa-user-o"></i>
+                            </div>
+                            <strong class="text-uppercase">My Account <i class="fa fa-caret-down"></i></strong>
+                        </div>
+                        <a href="{% url 'mainpage:sing_in' %}" class="text-uppercase">Login</a> / <a href="{% url 'mainpage:registry' %}" class="text-uppercase">Create</a>
+                        <ul class="custom-menu">
+                            <li>
+                                <form method="post" action="" >
+                                    <input type="button" class="btn btn-outline-danger">LogOUT</input>
+                                </form>
+                            </li>
+<!--                            <li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>-->
+<!--                            <li><a href="#"><i class="fa fa-heart-o"></i> My Wishlist</a></li>-->
+<!--                            <li><a href="#"><i class="fa fa-exchange"></i> Compare</a></li>-->
+<!--                            <li><a href="{% url 'mainpage:checkout' %}"><i class="fa fa-check"></i> Checkout</a></li>-->
+<!--                            <li><a href="{% url 'mainpage:sing_in' %}"><i class="fa fa-unlock-alt"></i> LogOUT</a></li>-->
+<!--                            <li><a href="{% url 'mainpage:registry' %}"><i class="fa fa-user-plus"></i> Create An Account</a></li>-->
+                        </ul>
+                    </li>
+                    <!-- /Account -->
+                    <!-- Cart -->
+                    <li class="header-cart dropdown default-dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                            <div class="header-btns-icon">
+                                <i class="fa fa-shopping-cart"></i>
+                                <span class="qty">3</span>
+                            </div>
+                            <strong class="text-uppercase">My Cart:</strong>
+                            <br>
+                            <span>35.20$</span>
+                        </a>
+                        <div class="custom-menu">
+                            <div id="shopping-cart">
+                                <div class="shopping-cart-list">
+                                    <div class="product product-widget">
+                                        <div class="product-thumb">
+                                            <img src="{% static 'img/thumb-product01.jpg' %}" alt="">
+                                        </div>
+                                        <div class="product-body">
+                                            <h3 class="product-price">$32.50 <span class="qty">x3</span></h3>
+                                            <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
+                                        </div>
+                                        <button class="cancel-btn"><i class="fa fa-trash"></i></button>
+                                    </div>
+                                    <div class="product product-widget">
+                                        <div class="product-thumb">
+                                            <img src="{% static 'img/thumb-product01.jpg' %}" alt="">
+                                        </div>
+                                        <div class="product-body">
+                                            <h3 class="product-price">$32.50 <span class="qty">x3</span></h3>
+                                            <h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
+                                        </div>
+                                        <button class="cancel-btn"><i class="fa fa-trash"></i></button>
+                                    </div>
+                                </div>
+                                <div class="shopping-cart-btns">
+                                    <a href="{% url 'mainpage:cart' %}">
+                                        <button class="main-btn" >View Cart</button>
+                                    </a>
+                                    <a href="{% url 'mainpage:checkout' %}">
+                                    <button class="primary-btn">Checkout <i class="fa fa-arrow-circle-right"></i>
+                                    </button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- /Cart -->
+                    <!-- Mobile nav toggle-->
+                    <li class="nav-toggle">
+                        <button class="nav-toggle-btn main-btn icon-btn"><i class="fa fa-bars"></i></button>
+                    </li>
+                    <!-- / Mobile nav toggle -->
+                </ul>
+            </div>
+        </div>
+        {% else %}
+            <div class="pull-right">
+                <ul class="header-btns">
+                    <!-- Account -->
+                    <li class="header-account dropdown default-dropdown">
+                        <div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
+                            <div class="header-btns-icon">
+                                <i class="fa fa-user-o"></i>
+                            </div>
+                            <strong class="text-uppercase">My Account <i class="fa fa-caret-down"></i></strong>
+                        </div>
+                        <a href="{% url 'mainpage:sing_in' %}" class="text-uppercase">Login</a> / <a href="{% url 'mainpage:registry' %}" class="text-uppercase">Create</a>
+                        <ul class="custom-menu">
+<!--                            <li>-->
+<!--                                <form method="post" action="" >-->
+<!--                                    <input type="button" class="btn btn-outline-danger">LogOUT</input>-->
+<!--                                </form>-->
+<!--                            </li>-->
+<!--                            <li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>-->
+<!--                            <li><a href="#"><i class="fa fa-heart-o"></i> My Wishlist</a></li>-->
+<!--                            <li><a href="#"><i class="fa fa-exchange"></i> Compare</a></li>-->
+<!--                            <li><a href="{% url 'mainpage:checkout' %}"><i class="fa fa-check"></i> Checkout</a></li>-->
+<!--                            <li><a href="{% url 'mainpage:sing_in' %}"><i class="fa fa-unlock-alt"></i> LogOUT</a></li>-->
+<!--                            <li><a href="{% url 'mainpage:registry' %}"><i class="fa fa-user-plus"></i> Create An Account</a></li>-->
+                        </ul>
+                    </li>
+                    <!-- /Account -->
+                </ul>
+            </div>
+
+        {% endif %}
+{% endblock %}
+
+
 {% block content %}
 <!-- section -->
 <div class="section section-grey">
@@ -84,8 +201,8 @@
                         <div class="product-btns">
                             <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
                             <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-                            <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart
-                            </button>
+                            <a href="{% url 'mainpage:cart' %}"> <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart
+                            </button></a>
                         </div>
                     </div>
                 </div>
@@ -118,8 +235,8 @@
                         <div class="product-btns">
                             <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
                             <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-                            <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart
-                            </button>
+                            <a href="{% url 'mainpage:cart' %}"> <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart
+                            </button></a>
                         </div>
                     </div>
                 </div>
@@ -152,8 +269,8 @@
                         <div class="product-btns">
                             <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
                             <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-                            <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart
-                            </button>
+                            <a href="{% url 'mainpage:cart' %}"> <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart
+                            </button></a>
                         </div>
                     </div>
                 </div>
@@ -183,8 +300,8 @@
                         <div class="product-btns">
                             <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
                             <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-                            <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart
-                            </button>
+                            <a href="{% url 'mainpage:cart' %}"> <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart
+                            </button></a>
                         </div>
                     </div>
                 </div>
@@ -233,8 +350,8 @@
                         <div class="product-btns">
                             <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
                             <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-                            <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart
-                            </button>
+                            <a href="{% url 'mainpage:cart' %}"> <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart
+                            </button></a>
                         </div>
                     </div>
                 </div>
@@ -267,8 +384,8 @@
                         <div class="product-btns">
                             <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
                             <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-                            <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart
-                            </button>
+                            <a href="{% url 'mainpage:cart' %}"> <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart
+                            </button></a>
                         </div>
                     </div>
                 </div>
@@ -301,8 +418,8 @@
                         <div class="product-btns">
                             <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
                             <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-                            <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart
-                            </button>
+                            <a href="{% url 'mainpage:cart' %}"> <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart
+                            </button></a>
                         </div>
                     </div>
                 </div>
@@ -341,8 +458,8 @@
                         <div class="product-btns">
                             <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
                             <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-                            <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart
-                            </button>
+                            <a href="{% url 'mainpage:cart' %}"> <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart
+                            </button></a>
                         </div>
                     </div>
                 </div>
@@ -372,8 +489,8 @@
                         <div class="product-btns">
                             <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
                             <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-                            <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart
-                            </button>
+                            <a href="{% url 'mainpage:cart' %}"> <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart
+                            </button></a>
                         </div>
                     </div>
                 </div>
@@ -405,8 +522,8 @@
                         <div class="product-btns">
                             <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
                             <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-                            <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart
-                            </button>
+                            <a href="{% url 'mainpage:cart' %}"> <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart
+                            </button></a>
                         </div>
                     </div>
                 </div>
@@ -439,8 +556,8 @@
                         <div class="product-btns">
                             <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
                             <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-                            <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart
-                            </button>
+                            <a href="{% url 'mainpage:cart' %}"> <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart
+                            </button></a>
                         </div>
                     </div>
                 </div>
